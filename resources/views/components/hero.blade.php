@@ -1,10 +1,8 @@
 <main class="hero">
-    <div class="hero-slides carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="false" data-bs-touch="false">
-        <div class="carousel-inner">
-            @foreach (config('platform.hero.slides') as $slide)
-                <div @class(['carousel-item', 'active' => $loop->first]) style="background-image: url('{{ asset($slide) }}')"></div>
-            @endforeach
-        </div>
+    <div class="hero-slides" data-interval="5000">
+        @foreach (config('platform.hero.slides') as $slide)
+            <div @class(['hero-slide', 'active' => $loop->first]) style="background-image: url('{{ asset($slide) }}')"></div>
+        @endforeach
     </div>
 
     <div class="hero-inner">
