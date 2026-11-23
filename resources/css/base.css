@@ -1,32 +1,32 @@
 :root {
-    --brand: #007a3d;
-    --brand-dark: #006c35;
-    --brand-tint: #e0ede6;
-    --brand-mist: #f2f8f5;
-    --ink: #14241d;
-    --line: #e3e8e5;
-    --radius: 16px;
+    --brand: #006c35;
+    --brand-hover: #00843d;
+    --brand-light: #00a651;
+    --ink: #04241a;
     --nav-height: 72px;
-    --partners-height: 82px;
-    --contact-height: 62px;
-    --font-ar: "Cairo", system-ui, sans-serif;
-    --font-en: "Inter", system-ui, sans-serif;
+    --partners-height: 84px;
+    --contact-height: 60px;
+}
+
+html,
+body {
+    height: 100dvh;
+    overflow: hidden;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     margin: 0;
-    font-family: var(--font-ar);
-    color: var(--ink);
+    font-family: "Cairo", sans-serif;
+    color: #111827;
     background: #fff;
-}
-
-html[lang="en"] body {
-    font-family: var(--font-en);
 }
 
 a {
     text-decoration: none;
+}
+
+[dir="rtl"] .icon-directional {
+    transform: scaleX(-1);
 }
