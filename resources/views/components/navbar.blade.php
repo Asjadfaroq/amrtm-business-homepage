@@ -11,7 +11,7 @@
         <ul class="nav-links collapse" id="nav-menu">
             @foreach (config('platform.navigation') as $item)
                 <li>
-                    <a href="#" @class(['active' => $loop->first])>{{ __("home.nav.{$item}") }}</a>
+                    <a href="{{ $item === 'home' ? route('home.'.app()->getLocale()) : route('page.'.app()->getLocale(), $item) }}" @class(['active' => $item === (request()->route('page') ?? 'home')])>{{ __("home.nav.{$item}") }}</a>
                 </li>
             @endforeach
         </ul>

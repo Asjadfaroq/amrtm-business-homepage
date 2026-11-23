@@ -30,4 +30,15 @@ class HomePageTest extends TestCase
             ->assertSee('Law Firms')
             ->assertSee('Afaq Business');
     }
+
+    public function test_inner_pages_resolve_in_both_locales(): void
+    {
+        $this->get('/services')->assertOk()->assertSee('الخدمات');
+        $this->get('/en/about')->assertOk()->assertSee('About');
+    }
+
+    public function test_unknown_pages_return_not_found(): void
+    {
+        $this->get('/unknown')->assertNotFound();
+    }
 }

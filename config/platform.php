@@ -7,6 +7,7 @@ return [
     'rtl' => ['ar'],
 
     'navigation' => ['home', 'services', 'consultants', 'about', 'contact'],
+    'pages' => ['services', 'consultants', 'about', 'contact'],
 
     'hero' => [
         'slides' => [

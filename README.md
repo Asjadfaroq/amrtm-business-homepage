@@ -140,7 +140,7 @@ tests/Feature/HomePageTest.php           Feature tests
 ## Differences from the live site
 
 - **English locale:** the live site leaves several labels in Arabic when switched to English. Here the English locale is fully translated.
-- **Links:** this is a single page, so navigation links and cards point to `#`.
+- **Inner pages:** the navigation links open simple placeholder pages to show routing. Cards and buttons point to `#`.
 - **Hero video:** the video card is visual only and does not open a player.
 
 ---

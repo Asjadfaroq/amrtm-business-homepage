@@ -48,4 +48,9 @@ return [
         'whatsapp' => 'WhatsApp',
     ],
 
+    'page' => [
+        'notice' => 'This page is outside the scope of the task.',
+        'back' => 'Back to home',
+    ],
+
 ];
