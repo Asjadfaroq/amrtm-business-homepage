@@ -1,7 +1,10 @@
 @props(['entity'])
 
 <a class="entity-card tone-{{ $entity->tone }}" href="#">
-    <span class="entity-card-icon"><i class="ti ti-{{ $entity->icon }}"></i></span>
-    <h3 class="entity-card-title">{{ $entity->name }}</h3>
+    <div class="entity-card-body">
+        <span class="entity-card-icon"><i class="ti ti-{{ $entity->icon }}"></i></span>
+        <h3 class="entity-card-title">{{ $entity->name }}</h3>
+    </div>
+
     <span class="entity-card-arrow"><i class="fa fa-arrow-right icon-directional"></i></span>
 </a>

@@ -1,79 +1,109 @@
 .partners {
+    position: relative;
+    z-index: 6;
     display: flex;
-    align-items: stretch;
+    align-items: center;
     flex: 0 0 var(--partners-height);
-    height: var(--partners-height);
+    border-top: 1px solid #e3ece6;
     background: #fff;
     overflow: hidden;
 }
 
 .partners-label {
-    z-index: 2;
+    z-index: 1;
     display: flex;
     align-items: center;
-    flex: 0 0 auto;
+    flex-shrink: 0;
+    height: 100%;
     margin: 0;
-    padding-inline: 24px;
-    border-inline-end: 1px solid #dfe7e2;
-    background: var(--brand-mist);
-    font-size: 1.12rem;
-    font-weight: 800;
+    padding: 0 24px;
+    border-inline-end: 1px solid #e3ece6;
+    background: #f3faf6;
+    font-size: 17px;
+    font-weight: 900;
     color: var(--ink);
 }
 
 .partners-viewport {
-    flex: 1 1 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1 1 0;
+    height: 100%;
     overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+}
+
+.partners-viewport::before,
+.partners-viewport::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 80px;
+    pointer-events: none;
+}
+
+.partners-viewport::before {
+    right: 0;
+    background: linear-gradient(270deg, #fff, rgba(255, 255, 255, 0));
+}
+
+.partners-viewport::after {
+    left: 0;
+    background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0));
 }
 
 .partners-track {
     display: flex;
-    align-items: center;
     width: max-content;
-    height: 100%;
-    animation: partners-scroll 60s linear infinite;
+    animation: partners-scroll 40s linear infinite;
 }
 
 [dir="rtl"] .partners-track {
     animation-name: partners-scroll-rtl;
 }
 
-.partners-track:hover {
+.partners-viewport:hover .partners-track {
     animation-play-state: paused;
 }
 
 .partner {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-inline-end: 68px;
-    font-size: 1.04rem;
-    font-weight: 700;
+    gap: 10px;
+    padding: 0 34px;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.5;
     color: var(--ink);
     white-space: nowrap;
 }
 
 .partner i {
-    font-size: 1.55rem;
-    color: #0b6b40;
+    font-size: 22px;
+    color: #0d7751;
 }
 
 @keyframes partners-scroll {
     to {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
 @keyframes partners-scroll-rtl {
     to {
-        transform: translateX(50%);
+        transform: translate3d(50%, 0, 0);
     }
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 600px) {
     .partners-label {
-        padding-inline: 14px;
+        padding: 0 14px;
+    }
+
+    .partner {
+        padding: 0 18px;
     }
 }
 
