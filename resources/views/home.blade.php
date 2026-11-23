@@ -18,11 +18,9 @@
             <div class="hero-section-inner is-wide">
                 <h2 class="services-heading">{{ __('home.services.heading') }}</h2>
 
-                <div class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 service-grid">
+                <div class="service-grid">
                     @foreach ($services as $service)
-                        <div class="col">
-                            <x-service-chip :service="$service" />
-                        </div>
+                        <x-service-chip :service="$service" />
                     @endforeach
                 </div>
             </div>
