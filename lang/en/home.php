@@ -39,4 +39,13 @@ return [
         'heading' => 'Services provided by consultants and specialized professional firms to Amrtm customers',
     ],
 
+    'partners' => [
+        'heading' => 'Our Partners',
+    ],
+
+    'contact' => [
+        'office' => 'Head Office',
+        'whatsapp' => 'WhatsApp',
+    ],
+
 ];

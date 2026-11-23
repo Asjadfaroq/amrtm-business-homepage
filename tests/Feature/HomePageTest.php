@@ -17,7 +17,8 @@ class HomePageTest extends TestCase
             ->assertOk()
             ->assertSee('dir="rtl"', false)
             ->assertSee('الوزارات')
-            ->assertSee('مكاتب المحاماة');
+            ->assertSee('مكاتب المحاماة')
+            ->assertSee('آفاق الأعمال');
     }
 
     public function test_english_home_page_renders_left_to_right(): void
@@ -26,6 +27,7 @@ class HomePageTest extends TestCase
             ->assertOk()
             ->assertSee('dir="ltr"', false)
             ->assertSee('Ministries')
-            ->assertSee('Law Firms');
+            ->assertSee('Law Firms')
+            ->assertSee('Afaq Business');
     }
 }

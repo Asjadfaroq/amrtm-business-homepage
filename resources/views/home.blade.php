@@ -30,4 +30,8 @@
             </div>
         </section>
     </x-hero>
+
+    <x-partners :partners="$partners" />
+
+    <x-contact-bar />
 </x-layout>
