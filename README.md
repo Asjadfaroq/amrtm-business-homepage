@@ -1,58 +1,157 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Amrtm Business Homepage
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**A Laravel rebuild of the Amrtm business platform homepage, in Arabic and English.**
 
-## About Laravel
+[![CI](https://github.com/Asjadfaroq/amrtm-business-homepage/actions/workflows/ci.yml/badge.svg)](https://github.com/Asjadfaroq/amrtm-business-homepage/actions/workflows/ci.yml)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This project was built as a take-home task for the Full-Stack Developer role at Amrtm. The brief was to rebuild the homepage of [business.amrtm.com.sa](https://business.amrtm.com.sa) in my own code.
 
-## Learning Laravel
+The page is a single screen: a navbar, a hero with a rotating background, five entity cards, six professional service links, a partners marquee and a contact bar. Layout, spacing, colours and typography follow the live site. The code, structure and class names are my own.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Stack:** Laravel 13, PHP 8.3, Blade components, Bootstrap 5.3 (RTL and LTR builds), Vite, SQLite or MySQL, PHPUnit, Laravel Pint, GitHub Actions.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
 
-## Agentic Development
+## Features
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- **Two locales:** `/` serves Arabic (RTL) and `/en` serves English (LTR). A route middleware sets the locale, and the layout loads the matching Bootstrap build.
+- **Blade components:** the navbar, hero, entity card, service link, partners strip and contact bar are separate components. The page view only composes them.
+- **Content from the database:** entities, services and partners are Eloquent models with migrations and seeders. Each record stores an Arabic and an English name, and a shared trait returns the one for the current locale.
+- **Interface text in language files:** headings, navigation and button labels live in `lang/ar` and `lang/en`.
+- **One stylesheet per component:** shared tokens sit in `base.css`, and each component has its own file under `resources/css/components`.
+- **Self-hosted assets:** fonts (Cairo, Inter) and icons (Font Awesome, Tabler) are installed from npm and bundled by Vite, so the page makes no CDN requests.
+- **Responsive:** the layout adapts from mobile to wide desktop screens, and the mobile menu uses the Bootstrap collapse plugin.
+- **Tests and CI:** feature tests cover both locales. Every push runs Pint, the test suite and the asset build on GitHub Actions.
+
+---
+
+## Prerequisites
+
+- [PHP 8.3+](https://www.php.net/downloads) with the `sqlite3`, `mbstring`, `xml` and `curl` extensions
+- [Composer](https://getcomposer.org/download/)
+- [Node.js 20+](https://nodejs.org/)
+
+---
+
+## Quick Start
+
+### 1. Clone the repository
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/Asjadfaroq/amrtm-business-homepage.git
+cd amrtm-business-homepage
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install dependencies
 
-## Contributing
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Configure the environment
 
-## Code of Conduct
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Create and seed the database
 
-## Security Vulnerabilities
+```bash
+touch database/database.sqlite
+php artisan migrate --seed
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5. Build the assets and start the server
 
-## License
+```bash
+npm run build
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Open `http://localhost:8000` for Arabic and `http://localhost:8000/en` for English.
+
+During development, run `npm run dev` in a second terminal instead of `npm run build` to get hot reloading.
+
+---
+
+## Using MySQL
+
+The project runs on SQLite by default so it starts without a database server. To use MySQL, change these values in `.env` and run the migrations again:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=amrtm
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+```bash
+php artisan migrate --seed
+```
+
+---
+
+## Tests and code style
+
+```bash
+php artisan test
+vendor/bin/pint --test
+```
+
+---
+
+## Project structure
+
+```
+app/
+  Http/Controllers/HomeController.php    Loads the page data
+  Http/Middleware/SetLocale.php          Sets the locale per route
+  Models/                                Entity, Service, Partner
+  Models/Concerns/HasLocalizedName.php   Returns the name for the current locale
+  View/Components/Layout.php             Resolves the text direction
+config/platform.php                      Locales, navigation, hero slides, contact numbers
+database/
+  migrations/                            Table definitions
+  seeders/                               Homepage content
+lang/
+  ar/home.php, en/home.php               Interface text
+resources/
+  css/base.css                           Tokens and page shell
+  css/components/                        One stylesheet per component
+  js/hero-slider.js                      Background crossfade
+  views/home.blade.php                   Page composition
+  views/components/                      Blade components
+routes/web.php                           The two locale routes
+tests/Feature/HomePageTest.php           Feature tests
+.github/workflows/ci.yml                 Lint, tests and build
+```
+
+---
+
+## Differences from the live site
+
+- **English locale:** the live site leaves several labels in Arabic when switched to English. Here the English locale is fully translated.
+- **Links:** this is a single page, so navigation links and cards point to `#`.
+- **Hero video:** the video card is visual only and does not open a player.
+
+---
+
+## Notice
+
+The Amrtm name, logo and images belong to Amrtm and are used here only for this assessment.
+
+---
+
+**Developed by Asjiad Farooq**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/asjadfarooqconnect)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/Asjadfaroq)
