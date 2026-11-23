@@ -35,4 +35,8 @@ return [
         'heading' => 'Welcome to Amrtm Platform',
     ],
 
+    'services' => [
+        'heading' => 'Services provided by consultants and specialized professional firms to Amrtm customers',
+    ],
+
 ];

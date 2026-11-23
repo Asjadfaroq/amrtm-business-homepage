@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Entity;
+use App\Models\Service;
 use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
@@ -11,6 +12,7 @@ class HomeController extends Controller
     {
         return view('home', [
             'entities' => Entity::orderBy('sort_order')->get(),
+            'services' => Service::orderBy('sort_order')->get(),
         ]);
     }
 }

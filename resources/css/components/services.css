@@ -1,0 +1,79 @@
+.hero-services {
+    margin-top: 31px;
+}
+
+.services-heading {
+    margin: 0;
+    padding-inline: 16px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.services-container {
+    max-width: 1328px;
+    margin: 18px auto 0;
+    padding-inline: 15px;
+}
+
+.services-container .row {
+    --bs-gutter-x: 14px;
+    --bs-gutter-y: 14px;
+}
+
+.service-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    height: 68px;
+    padding: 0 8px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--radius);
+    background: rgba(40, 55, 62, 0.62);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.service-chip:hover {
+    transform: translateY(-3px);
+    background: rgba(40, 55, 62, 0.82);
+    color: #fff;
+}
+
+.service-chip-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--chip-color);
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.service-chip-title {
+    font-size: 0.93rem;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: center;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1199.98px) {
+    .services-container {
+        padding-inline: 16px;
+    }
+
+    .service-chip {
+        justify-content: flex-start;
+    }
+
+    .service-chip-title {
+        font-size: 0.85rem;
+        text-align: start;
+    }
+}

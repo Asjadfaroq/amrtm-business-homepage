@@ -15,5 +15,19 @@
                 </div>
             </div>
         </section>
+
+        <section class="hero-services">
+            <h2 class="services-heading">{{ __('home.services.heading') }}</h2>
+
+            <div class="services-container">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-xl-6">
+                    @foreach ($services as $service)
+                        <div class="col">
+                            <x-service-chip :service="$service" />
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
     </x-hero>
 </x-layout>

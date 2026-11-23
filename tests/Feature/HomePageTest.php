@@ -16,7 +16,8 @@ class HomePageTest extends TestCase
         $this->get('/')
             ->assertOk()
             ->assertSee('dir="rtl"', false)
-            ->assertSee('الوزارات');
+            ->assertSee('الوزارات')
+            ->assertSee('مكاتب المحاماة');
     }
 
     public function test_english_home_page_renders_left_to_right(): void
@@ -24,6 +25,7 @@ class HomePageTest extends TestCase
         $this->get('/en')
             ->assertOk()
             ->assertSee('dir="ltr"', false)
-            ->assertSee('Ministries');
+            ->assertSee('Ministries')
+            ->assertSee('Law Firms');
     }
 }
