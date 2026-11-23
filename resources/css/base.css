@@ -23,6 +23,10 @@ body {
     background: #fff;
 }
 
+html[lang="en"] body {
+    font-family: "Inter", sans-serif;
+}
+
 a {
     text-decoration: none;
 }
