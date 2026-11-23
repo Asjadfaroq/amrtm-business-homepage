@@ -1,7 +1,7 @@
 <nav class="site-nav">
     <div class="site-nav-inner">
         <a class="brand" href="{{ route('home.'.app()->getLocale()) }}">
-            <img class="brand-mark" src="{{ asset('images/logo.png') }}" alt="">
+            <img class="brand-mark" width="58" height="46" src="{{ asset('images/logo.png') }}" alt="">
             <span class="brand-text">
                 <span class="brand-name">{{ __('home.brand.name') }}</span>
                 <span class="brand-tagline">{{ __('home.brand.tagline') }}</span>

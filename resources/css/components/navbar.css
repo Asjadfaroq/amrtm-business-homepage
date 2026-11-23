@@ -203,12 +203,14 @@
         gap: 4px;
     }
 
-    .btn-nav-soft {
-        display: inline-flex;
-    }
-
     .nav-toggle {
         display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .btn-nav-soft {
+        display: inline-flex;
     }
 }
 
@@ -221,5 +223,12 @@
         border-top: 1px solid #e2e8f0;
         background: #fff;
         box-shadow: 0 14px 24px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 400px) {
+    .site-nav-inner {
+        gap: 8px;
+        padding-inline: 12px;
     }
 }
