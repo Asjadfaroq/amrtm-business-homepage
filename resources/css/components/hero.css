@@ -232,18 +232,27 @@
         margin-bottom: 10px;
     }
 
+    .hero-lead {
+        margin-bottom: 12px;
+    }
+
     .video-box {
         flex: 0 0 auto;
         justify-content: center;
         width: 100%;
         max-width: none;
         margin: 6px 0;
+        padding-inline-start: 60px;
     }
 
     .video-card {
         width: 220px;
         height: 135px;
         border-radius: 18px;
+    }
+
+    .video-card-play {
+        top: 23px;
     }
 }
 
@@ -263,6 +272,11 @@
         line-height: 1.7;
     }
 
+    .video-box {
+        margin: 4px 0 6px;
+        padding-inline-start: 80px;
+    }
+
     .video-card {
         width: 200px;
         height: 125px;
@@ -270,7 +284,7 @@
     }
 
     .video-card-play {
-        top: calc(42% - 46.4px);
+        top: 21px;
         width: 42px;
         height: 42px;
         font-size: 14px;
@@ -294,9 +308,17 @@
 }
 
 @media (max-width: 480px) {
+    .video-box {
+        padding-inline-start: 100px;
+    }
+
     .video-card {
         width: 180px;
         height: 115px;
+    }
+
+    .video-card-play {
+        top: 19px;
     }
 }
 
