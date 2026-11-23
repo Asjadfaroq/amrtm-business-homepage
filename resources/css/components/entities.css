@@ -143,5 +143,7 @@
 
     .entity-card-title {
         font-size: 1.05rem;
+        overflow-wrap: anywhere;
+        hyphens: auto;
     }
 }

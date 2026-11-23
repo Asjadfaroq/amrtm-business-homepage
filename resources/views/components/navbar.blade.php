@@ -19,22 +19,22 @@
         <x-language-switch />
 
         <a class="btn-nav btn-nav-outline" href="#">
-            <i class="bi bi-box-arrow-in-right icon-directional"></i>
+            <i class="fa fa-right-to-bracket"></i>
             <span>{{ __('home.actions.sign_in') }}</span>
         </a>
 
         <a class="btn-nav btn-nav-solid" href="#">
-            <i class="bi bi-person-plus-fill"></i>
+            <i class="fa fa-user-plus"></i>
             <span>{{ __('home.actions.register') }}</span>
         </a>
 
         <a class="btn-nav btn-nav-soft" href="#">
-            <i class="bi bi-building-fill"></i>
+            <i class="fa fa-building"></i>
             <span>{{ __('home.actions.join') }}</span>
         </a>
 
         <button class="nav-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="{{ __('home.nav.menu') }}">
-            <i class="bi bi-list"></i>
+            <i class="fa fa-bars"></i>
         </button>
     </div>
 </nav>

@@ -8,7 +8,7 @@
             @foreach (range(1, 8) as $copy)
                 @foreach ($partners as $partner)
                     <span class="partner">
-                        <i class="bi bi-{{ $partner->icon }}"></i>
+                        <i class="fa fa-{{ $partner->icon }}"></i>
                         {{ $partner->name }}
                     </span>
                 @endforeach

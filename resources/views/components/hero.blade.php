@@ -16,7 +16,7 @@
                     <h1 class="hero-title">{{ __('home.hero.title') }}</h1>
 
                     <a class="hero-badge" href="#">
-                        <i class="bi bi-pencil-square"></i>
+                        <i class="fa fa-file-signature"></i>
                         {{ __('home.hero.badge') }}
                     </a>
                 </div>
@@ -25,10 +25,10 @@
             </div>
 
             <button class="video-card" type="button">
-                <span class="video-card-play"><i class="bi bi-play-fill"></i></span>
-                <span class="video-card-brand">{{ __('home.brand.name') }}</span>
+                <img class="video-card-poster" src="{{ asset('images/video-poster.jpg') }}" alt="">
+                <span class="video-card-play"><i class="fa fa-play"></i></span>
                 <span class="video-card-caption">
-                    <i class="bi bi-play-circle-fill"></i>
+                    <i class="fa fa-circle-play"></i>
                     {{ __('home.hero.video') }}
                 </span>
             </button>

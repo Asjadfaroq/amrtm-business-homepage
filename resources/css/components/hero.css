@@ -102,12 +102,29 @@
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 22px;
-    background: linear-gradient(180deg, rgba(206, 226, 214, 0.92) 0%, rgba(78, 133, 104, 0.92) 100%);
+    background: #fff;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
     overflow: hidden;
 }
 
+.video-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(176, 186, 180, 0.6) 0%, rgba(140, 172, 152, 0.42) 50%, rgba(52, 110, 78, 0.92) 100%);
+}
+
+.video-card-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .video-card-play {
+    position: relative;
+    z-index: 1;
     display: grid;
     place-items: center;
     width: 52px;
@@ -116,21 +133,13 @@
     border-radius: 50%;
     background: linear-gradient(135deg, #00823f, #0fae5f);
     box-shadow: 0 0 0 9px rgba(255, 255, 255, 0.18);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #fff;
-}
-
-.video-card-brand {
-    margin-top: 16px;
-    font-family: var(--font-ar);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: #124a4f;
 }
 
 .video-card-caption {
     position: absolute;
+    z-index: 1;
     inset-inline: 10px;
     bottom: 10px;
     display: flex;
@@ -191,9 +200,5 @@
         height: 42px;
         margin-top: 20px;
         font-size: 1.25rem;
-    }
-
-    .video-card-brand {
-        display: none;
     }
 }

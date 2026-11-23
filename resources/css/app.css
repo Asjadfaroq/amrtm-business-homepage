@@ -7,7 +7,10 @@
 @import "@fontsource/inter/latin-500.css";
 @import "@fontsource/inter/latin-600.css";
 @import "@fontsource/inter/latin-700.css";
-@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "@fortawesome/fontawesome-free/css/solid.css";
+@import "@fortawesome/fontawesome-free/css/brands.css";
+@import "@tabler/icons-webfont/dist/tabler-icons.min.css";
 @import "./base.css";
 @import "./components/navbar.css";
 @import "./components/hero.css";
