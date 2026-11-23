@@ -27,6 +27,8 @@ return [
     'hero' => [
         'title' => 'Your Trusted Partner for Government Services',
         'lead' => 'One place to complete all government and private service procedures. We provide professional services that make dealing with official entities easy.',
+        'badge' => 'Legal contracts by activity',
+        'video' => 'Services intro video',
     ],
 
 ];
