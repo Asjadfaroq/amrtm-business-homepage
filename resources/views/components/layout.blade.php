@@ -6,6 +6,9 @@
     <title>{{ $title }}</title>
     <meta name="description" content="{{ __('home.description') }}">
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    @foreach ($fonts as $font)
+        <link rel="preload" as="font" type="font/woff2" href="{{ Vite::asset("node_modules/{$font}") }}" crossorigin>
+    @endforeach
     @vite(["resources/css/vendor/bootstrap.{$direction}.css", 'resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
