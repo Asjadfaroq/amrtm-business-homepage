@@ -1,0 +1,26 @@
+:root {
+    --brand: #007a3d;
+    --brand-dark: #006c35;
+    --brand-tint: #e0ede6;
+    --brand-mist: #f2f8f5;
+    --ink: #14241d;
+    --line: #e3e8e5;
+    --radius: 16px;
+    --font-ar: "Cairo", system-ui, sans-serif;
+    --font-en: "Inter", system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-ar);
+    color: var(--ink);
+    background: #fff;
+}
+
+html[lang="en"] body {
+    font-family: var(--font-en);
+}
+
+a {
+    text-decoration: none;
+}
