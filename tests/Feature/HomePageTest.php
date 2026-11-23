@@ -18,7 +18,8 @@ class HomePageTest extends TestCase
             ->assertSee('dir="rtl"', false)
             ->assertSee('الوزارات')
             ->assertSee('مكاتب المحاماة')
-            ->assertSee('آفاق الأعمال');
+            ->assertSee('آفاق الأعمال')
+            ->assertSee('id="mobile-menu"', false);
     }
 
     public function test_english_home_page_renders_left_to_right(): void
@@ -28,7 +29,8 @@ class HomePageTest extends TestCase
             ->assertSee('dir="ltr"', false)
             ->assertSee('Ministries')
             ->assertSee('Law Firms')
-            ->assertSee('Afaq Business');
+            ->assertSee('Afaq Business')
+            ->assertSee('id="mobile-menu"', false);
     }
 
     public function test_inner_pages_resolve_in_both_locales(): void

@@ -8,7 +8,7 @@
             </span>
         </a>
 
-        <ul class="nav-links collapse" id="nav-menu">
+        <ul class="nav-links">
             @foreach (config('platform.navigation') as $item)
                 <li>
                     <a href="{{ $item === 'home' ? route('home.'.app()->getLocale()) : route('page.'.app()->getLocale(), $item) }}" @class(['active' => $item === (request()->route('page') ?? 'home')])>{{ __("home.nav.{$item}") }}</a>
@@ -34,9 +34,11 @@
                 <span>{{ __('home.actions.join') }}</span>
             </a>
 
-            <button class="nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="{{ __('home.nav.menu') }}">
+            <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="{{ __('home.nav.menu') }}">
                 <i class="fa fa-bars"></i>
             </button>
         </div>
     </div>
 </nav>
+
+<x-mobile-menu />

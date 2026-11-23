@@ -51,6 +51,7 @@
 }
 
 .nav-links {
+    display: none;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -196,7 +197,7 @@
 }
 
 @media (min-width: 1024px) {
-    .nav-links.collapse {
+    .nav-links {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -212,17 +213,5 @@
 @media (min-width: 1200px) {
     .btn-nav-soft {
         display: inline-flex;
-    }
-}
-
-@media (max-width: 1023.98px) {
-    .nav-links {
-        position: absolute;
-        inset-inline: 0;
-        top: 100%;
-        padding: 12px 16px 16px;
-        border-top: 1px solid #e2e8f0;
-        background: #fff;
-        box-shadow: 0 14px 24px rgba(0, 0, 0, 0.1);
     }
 }

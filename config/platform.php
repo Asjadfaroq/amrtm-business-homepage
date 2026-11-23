@@ -35,6 +35,16 @@ return [
     'navigation' => ['home', 'services', 'consultants', 'about', 'contact'],
     'pages' => ['services', 'consultants', 'about', 'contact'],
 
+    'mobile_navigation' => [
+        ['label' => 'nav.home', 'icon' => 'house', 'page' => null, 'link' => true],
+        ['label' => 'nav.services', 'icon' => 'table-cells-large', 'page' => 'services', 'link' => true],
+        ['label' => 'nav.about', 'icon' => 'circle-info', 'page' => 'about', 'link' => true],
+        ['label' => 'nav.contact', 'icon' => 'envelope', 'page' => 'contact', 'link' => true],
+        ['label' => 'nav.consultants', 'icon' => 'building', 'page' => 'consultants', 'link' => true],
+        ['label' => 'actions.sign_in', 'icon' => 'right-to-bracket', 'page' => null, 'link' => false],
+        ['label' => 'actions.register', 'icon' => 'user-plus', 'page' => null, 'link' => false],
+    ],
+
     'hero' => [
         'slides' => [
             'images/hero/slide-1.jpg',

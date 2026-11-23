@@ -15,6 +15,7 @@
 @import "@tabler/icons-webfont/dist/tabler-icons.min.css";
 @import "./base.css";
 @import "./components/navbar.css";
+@import "./components/mobile-menu.css";
 @import "./components/hero.css";
 @import "./components/entities.css";
 @import "./components/services.css";

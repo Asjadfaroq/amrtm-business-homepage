@@ -1,2 +1,2 @@
-import 'bootstrap/js/dist/collapse';
+import './mobile-menu';
 import './hero-slider';
