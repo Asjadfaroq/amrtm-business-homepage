@@ -7,31 +7,31 @@
         </div>
     </div>
 
-    <div class="hero-shade"></div>
-
     <div class="hero-inner">
         <div class="hero-top">
             <div class="hero-copy">
-                <div class="hero-headline">
-                    <h1 class="hero-title">{{ __('home.hero.title') }}</h1>
+                <a class="hero-badge" href="#">
+                    <i class="fa fa-file-signature"></i>
+                    {{ __('home.hero.badge') }}
+                </a>
 
-                    <a class="hero-badge" href="#">
-                        <i class="fa fa-file-signature"></i>
-                        {{ __('home.hero.badge') }}
-                    </a>
+                <div class="hero-heading">
+                    <h1 class="hero-title">{{ __('home.hero.title') }}</h1>
                 </div>
 
                 <p class="hero-lead">{{ __('home.hero.lead') }}</p>
             </div>
 
-            <button class="video-card" type="button">
-                <img class="video-card-poster" src="{{ asset('images/video-poster.jpg') }}" alt="">
-                <span class="video-card-play"><i class="fa fa-play"></i></span>
-                <span class="video-card-caption">
-                    <i class="fa fa-circle-play"></i>
-                    {{ __('home.hero.video') }}
-                </span>
-            </button>
+            <div class="video-box">
+                <button class="video-card" type="button">
+                    <img class="video-card-poster" src="{{ asset('images/video-poster.jpg') }}" alt="">
+                    <span class="video-card-play"><i class="fa fa-play"></i></span>
+                    <span class="video-card-caption">
+                        <i class="fa fa-circle-play"></i>
+                        {{ __('home.hero.video') }}
+                    </span>
+                </button>
+            </div>
         </div>
 
         {{ $slot }}
