@@ -31,4 +31,8 @@ return [
         'video' => 'Services intro video',
     ],
 
+    'entities' => [
+        'heading' => 'Welcome to Amrtm Platform',
+    ],
+
 ];
