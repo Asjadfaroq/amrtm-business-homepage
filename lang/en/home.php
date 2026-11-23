@@ -22,6 +22,7 @@ return [
     'actions' => [
         'sign_in' => 'Sign In',
         'register' => 'Register',
+        'create_account' => 'Create Account',
         'join' => 'Join as a Provider',
     ],
 

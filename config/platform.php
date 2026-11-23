@@ -42,7 +42,7 @@ return [
         ['label' => 'nav.contact', 'icon' => 'envelope', 'page' => 'contact', 'link' => true],
         ['label' => 'nav.consultants', 'icon' => 'building', 'page' => 'consultants', 'link' => true],
         ['label' => 'actions.sign_in', 'icon' => 'right-to-bracket', 'page' => null, 'link' => false],
-        ['label' => 'actions.register', 'icon' => 'user-plus', 'page' => null, 'link' => false],
+        ['label' => 'actions.create_account', 'icon' => 'user-plus', 'page' => null, 'link' => false],
     ],
 
     'hero' => [

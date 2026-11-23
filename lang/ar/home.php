@@ -22,6 +22,7 @@ return [
     'actions' => [
         'sign_in' => 'دخول',
         'register' => 'تسجيل',
+        'create_account' => 'تسجيل',
         'join' => 'انضم كمقدم خدمة',
     ],
 
