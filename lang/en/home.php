@@ -3,6 +3,7 @@
 return [
 
     'title' => 'Amrtm | Business Services',
+    'description' => 'Amrtm is a Saudi platform for business services: government transactions, supporting professional offices and specialised consulting in one place, with secure payment released only after you confirm completion.',
 
     'brand' => [
         'name' => 'آمر تم',
